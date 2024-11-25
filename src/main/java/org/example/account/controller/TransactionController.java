@@ -24,7 +24,7 @@ public class TransactionController {
             @Valid @RequestBody UseBalance.Request request
     ) throws InterruptedException {
         try {
-            Thread.sleep(5000L); //redis test 용도
+            Thread.sleep(5000L); // redis 작동 확인을 쉽게 하기 위한 코드
             return UseBalance.Response.from(transactionService.useBalance(request.getUserId(),
                     request.getAccountNumber(), request.getAmount()));
         } catch(AccountException e) {
