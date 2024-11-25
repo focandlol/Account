@@ -7,7 +7,6 @@ import org.example.account.exception.AccountException;
 import org.example.account.repository.AccountUserRepository;
 import org.example.account.type.AccountStatus;
 import org.example.account.repository.AccountRepository;
-import org.example.account.type.ErrorCode;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -42,6 +41,9 @@ class AccountServiceTest {
 
     private AccountUser user;
 
+    /**
+     * 공통 사용 유저
+     */
     @BeforeEach
     void setUp() {
         user = AccountUser.builder()
@@ -84,6 +86,7 @@ class AccountServiceTest {
         AccountDto account = accountService.createAccount(1L, 1000L);
 
         verify(accountRepository,times(1)).save(captor.capture());
+        assertEquals("1000000013", account.getAccountNumber());
         assertEquals(12L,account.getUserId());
         assertEquals(1000L,account.getBalance());
         assertEquals(1000L,captor.getValue().getBalance());

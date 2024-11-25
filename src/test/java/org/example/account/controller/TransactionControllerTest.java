@@ -6,7 +6,6 @@ import org.example.account.dto.TransactionDto;
 import org.example.account.dto.UseBalance;
 import org.example.account.exception.AccountException;
 import org.example.account.service.TransactionService;
-import org.example.account.type.ErrorCode;
 import org.example.account.type.TransactionResultType;
 import org.example.account.type.TransactionType;
 import org.junit.jupiter.api.DisplayName;
@@ -19,7 +18,6 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import java.time.LocalDateTime;
 
-import static org.example.account.type.ErrorCode.*;
 import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.BDDMockito.given;

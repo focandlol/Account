@@ -3,9 +3,9 @@ POST http://localhost:8080/transaction/use
 Content-Type: application/json
 
 {
-  "userId": 1,
-  "accountNumber": "0421769299",
-  "amount": 100
+  "userId": 2,
+  "accountNumber": "1439549188",
+  "amount": 100000
 }
 
 ### use balance2
@@ -14,7 +14,7 @@ Content-Type: application/json
 
 {
   "userId": 1,
-  "accountNumber": "0421769299",
+  "accountNumber": "4420432201",
   "amount": 123
 }
 
@@ -23,10 +23,10 @@ POST http://localhost:8080/transaction/cancel
 Content-Type: application/json
 
 {
-  "transactionId": "91bfe07df7224c3999df7f2fccb46bd4",
-  "accountNumber": "0421769299",
+  "transactionId": "763bcd9f7788499383ce0ed3960689bf",
+  "accountNumber": "4420432201",
   "amount": 100
 }
 
 ### query transaction
-GET http://localhost:8080/transaction/7f6e805c3ab54479bf33fd8fbd06491b
+GET http://localhost:8080/transaction/2b5c5822b1324a97bbc5f8d7af942263

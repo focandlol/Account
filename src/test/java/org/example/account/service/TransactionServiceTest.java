@@ -49,6 +49,9 @@ class TransactionServiceTest {
 
     private AccountUser user;
 
+    /**
+     * 공통 사용 유저
+     */
     @BeforeEach
     void setUp() {
         user = AccountUser.builder()
@@ -101,7 +104,7 @@ class TransactionServiceTest {
     }
 
     @Test
-    @DisplayName("실패 트랜잭션 저장")
+    @DisplayName("잔액 사용 실패 트랜잭션 저장")
     void saveFailedUseTransaction(){
         Account account = Account.builder()
                 .accountUser(user)

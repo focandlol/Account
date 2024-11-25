@@ -42,7 +42,7 @@ class AccountControllerTest {
     @DisplayName("계좌 생성 성공")
     void successCreateAccount() throws Exception {
         given(accountService.createAccount(anyLong(), anyLong()))
-                .willReturn(mockAccountDto(1L, "1234567890", null, null));
+                .willReturn(mockAccountDto(1L, "1234567890", 1000L, null));
 
         mockMvc.perform(post("/account")
                         .contentType(MediaType.APPLICATION_JSON)
@@ -59,7 +59,7 @@ class AccountControllerTest {
     @DisplayName("계좌 해지 성공")
     void successDeleteAccount() throws Exception {
         given(accountService.deleteAccount(anyLong(), anyString()))
-                .willReturn(mockAccountDto(1L, "1234567890", null, null));
+                .willReturn(mockAccountDto(1L, "1234567890", 0L, LocalDateTime.now()));
 
         mockMvc.perform(delete("/account")
                         .contentType(MediaType.APPLICATION_JSON)
@@ -101,13 +101,6 @@ class AccountControllerTest {
                 .balance(balance)
                 .registeredAt(LocalDateTime.now())
                 .unRegisteredAt(unRegisteredAt)
-                .build();
-    }
-
-    private Account mockAccount(String accountNumber, AccountStatus status) {
-        return Account.builder()
-                .accountNumber(accountNumber)
-                .accountStatus(status)
                 .build();
     }
 }
