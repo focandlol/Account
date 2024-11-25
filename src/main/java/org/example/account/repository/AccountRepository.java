@@ -10,9 +10,6 @@ import java.util.Optional;
 
 public interface AccountRepository extends JpaRepository<Account, Long> {
 
-    @Query(value = "SELECT * FROM account ORDER BY id DESC LIMIT 1", nativeQuery = true)
-    Optional<Account> findFirstByOrderByIdDesc();
-
     Integer countByAccountUser(AccountUser accountUser);
 
     Optional<Account> findByAccountNumber(String accountNumber);
