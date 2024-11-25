@@ -5,7 +5,7 @@ Content-Type: application/json
 {
   "userId": 2,
   "accountNumber": "1439549188",
-  "amount": 100000
+  "amount": 100000000000
 }
 
 ### use balance2
